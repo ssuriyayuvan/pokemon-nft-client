@@ -50,8 +50,8 @@ function Shop() {
           <p className="description">
             Make sure we have balance in wallet. Oh... Make sure you have wallet first then balance.
           </p>
-          <button onClick={check} >Buy</button>
-          <button onClick={check} >Buy Randomone</button>
+          <button onClick={check} >POTION</button>
+          <button onClick={check} >RANDOMON</button>
         </div>
         <div className="right">
           <div className="image">

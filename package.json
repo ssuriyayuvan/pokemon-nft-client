@@ -1,6 +1,5 @@
 {
-  "homepage": "https://kalyansaxena.github.io/react-nft-landing-page",
-  "name": "react-nft-landing-page",
+  "name": "pokemon-multichain-nft",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,12 +9,14 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.2.0",
     "ethers": "^5.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.4.4",
     "react-scripts": "5.0.1",
+    "revise-sdk": "^0.2.0",
     "sass": "^1.53.0",
     "scrollreveal": "^4.0.9",
     "web-vitals": "^2.1.4",

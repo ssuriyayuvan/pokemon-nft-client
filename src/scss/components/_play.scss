@@ -3,8 +3,18 @@
 }
 
 .play {
+  padding-top: 2rem;
     .sub-title{
         color: white;
+    }
+    span {
+      color: white;
+    }
+    .details {
+      display: flex;
+      span {
+        padding-left: 1rem;
+      }
     }
 
     button {
@@ -29,4 +39,9 @@
           box-shadow: none;
         }
       }
+      .title {
+        color: var(--pink);
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+      }    
 }

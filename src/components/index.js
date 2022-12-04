@@ -10,3 +10,4 @@ export { default as SuperRare } from "./SuperRare.jsx";
 export { default as Mint } from "./Mint.jsx";
 export { default as Play } from "./Play.jsx";
 export { default as Shop } from "./Shop.jsx";
+export { default as Mynft } from "./Mynft.jsx";

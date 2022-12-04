@@ -3,7 +3,7 @@ import {
   Clients,
   Footer,
   Free,
-  Home,
+  Mynft,
   Navbar,
   Mint,
   Play,
@@ -16,7 +16,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NFT from './contracts/nft.json'
 
 
-const defaultChainId = 5;
+const defaultChainId = 80001;
 
 export const supportedNetworks = {
     5777: {
@@ -26,11 +26,11 @@ export const supportedNetworks = {
         // govAddress: GovToken.networks[5777] ? GovToken.networks[5777].address : '',
         // exchangeAddress: Exchange.networks[5777] ? Exchange.networks[5777].address : '',
     },
-    5: {
+    80001: {
         name: 'Mumbai',
         tokenSymbol: 'MATIC',
-        rpcURL: 'https://goerli.infura.io/v3/',
-        contract: '0x270d546b3ee3fdb949d34445bd346113168ce4e9'
+        rpcURL: 'https://rpc-mumbai.maticvigil.com',
+        contract: '0x0c1197cB73D873E22d5f98c0e87708c8CB49D87d'
     }
 }
 
@@ -62,7 +62,7 @@ const initiate = async () => {
         const web3 = new Web3(provider);
 
         const contract = new web3.eth.Contract(
-            NFT.abi,
+            NFT,
             supportedNetworks[defaultChainId].contract
         );
 
@@ -95,7 +95,7 @@ const connectWallet = async () => {
         }
 
         const contract = new web3.eth.Contract(
-          NFT.abi,
+          NFT,
           supportedNetworks[defaultChainId].contract
       );
 
@@ -116,7 +116,7 @@ useEffect(() => {
     if (window.ethereum) {
         // Detect metamask account change
         window.ethereum.on('accountsChanged', async function (_accounts) {
-            setConnectionState({ ...connectionState, accounts: _accounts[0] })
+          connectWallet();
         })
 
         // Detect metamask network change
@@ -135,6 +135,7 @@ useEffect(() => {
           <Route path="/mint" element={<Mint />} />
           <Route path="/play" element={<Play />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/mynft" element={<Mynft />} />
           <Route path="/" element={<Land />} />
           {/* <Route path="/governance/proposal/:index" element={<ProposalPage />} />
           <Route path="/governance" element={<GovernancePage />} />

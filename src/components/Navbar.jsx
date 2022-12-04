@@ -66,6 +66,11 @@ const Navbar = ({ changeTheme, currentTheme, children }) => {
               Shop
             </a>
           </li>
+          <li>
+            <a onClick={() => navigate('/mynft')}>
+              My NFT
+            </a>
+          </li>
           {/* <li>
             <a href="#footer" onClick={() => setNavState(false)}>
               Contact
