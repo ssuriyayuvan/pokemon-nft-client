@@ -94,7 +94,7 @@ function Mint() {
           <p className="description">
             Mint and play the game.
           </p>
-         {balance > 0 ? <button onClick={mint} >Mint Avatar</button> :  <button onClick={() => navigate('/play')} >Enter Game</button>}
+         {balance == 0 ? <button onClick={mint} >Mint Avatar</button> :  <button onClick={() => navigate('/play')} >Enter Game</button>}
         </div>
         <div className="right">
           <div className="image">

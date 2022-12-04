@@ -1,7 +1,4 @@
 import { useContext, useEffect, useState } from 'react';
-import shop from "../assets/shop.png";
-import Web3 from "web3";
-import { createContext } from 'react';
 import { useConnection, supportedNetworks } from '../App';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -65,10 +62,10 @@ function Shop() {
     return (
         <div className="signup" id="signup">
             <div className="container" style={{ paddingTop: '10rem' }}>
-                {mynft.length > 0 && mynft.map((ele, i) => {
+                {mynft.length > 0 ? mynft.map((ele, i) => {
 
                     return (<Card key={i} image={ele.cached_file_url || grass} series={"test"} price={0.005} tag={"pokemon"} title={ "test"} time={"7898789"}  />)
-                })}
+                }) : <h1 style={{textAlign: 'center', color: 'white', justifyContent: 'center'}}>No Data</h1>}
                 {/* <Card image={} /> */}
                 {/* <div className="left">
           <p className="sub-title">Mint A New Avatar</p>

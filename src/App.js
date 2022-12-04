@@ -91,7 +91,7 @@ const connectWallet = async () => {
         const chainId = await web3.eth.net.getId();
 
         if (!supportedNetworks[chainId]) {
-            throw "Use Correct Network"
+            throw "Please Use Polygon Mumbai Network"
         }
 
         const contract = new web3.eth.Contract(
@@ -125,6 +125,10 @@ useEffect(() => {
         });
     }
 }, []);
+
+if(connectionState.error) {
+  return <div className="backdrop"><p>{connectionState.error}</p></div>
+}
 
   return (
     <div className="App" data-theme={theme}>
